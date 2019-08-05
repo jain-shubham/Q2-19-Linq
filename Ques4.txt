@@ -1,0 +1,11 @@
+For following string variable, filter and display the uppercase words:
+   “Extract UPPER case words FROM THIS string”.
+
+Method 1:
+str.Where(ch => (int)ch >=65 && (int)ch <=90)
+
+************************************************
+
+Method 2: 
+string.Concat(str.Select(ch => Char.IsUpper(ch) ? ch.ToString() : "")) ;
+************************************************

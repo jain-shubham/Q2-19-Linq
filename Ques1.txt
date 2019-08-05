@@ -1,0 +1,19 @@
+Q. List the Advantages and Disadvantages of using LINQ over Stored Procedure.
+
+##Advantages
+  - LINQ has full type checking at compile-time and Intellisense support in Visual Studio as compared to stored procedure.This powerful       
+  feature helps you to avoid run-time errors.
+  - LINQ allows debugging through .NET debugger as compared to stored procedure.
+  - LINQ also supports various .NET framework features like multi –threading as compared to stored procedures.
+  - LINQ provides the uniform programming model (means common query syntax) to query the multiple databases while you need to re-write the     
+  stored procedure for different databases.Deploying LINQ based application is much easy and simple as compared to stored procedures        
+  based.Since in case of stored procedures, you need to provide a SQL script for deployment but in case of LINQ everything gets complied     
+  into the DLLs.Hence you need to deploy only DLLs.
+
+##Disadvantages
+  - LINQ query is compiled each and every time while stored procedures re-used the cached execution plan to execute. 
+  Hence, LINQ query takes   more time in execution as compared to stored procedures.
+  - LINQ is not the good for writing complex queries as compared to stored procedures. 
+  - LINQ is not a good way for bulk insert and update operations.
+  - Performance is degraded if you don't write the LINQ query correctly.
+  - If you have done some changes in your query, you have to recompile it and redeploy its DLLs to the server.

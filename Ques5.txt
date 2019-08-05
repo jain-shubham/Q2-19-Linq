@@ -1,0 +1,22 @@
+ For following list of names extract the words from position 2nd till 5th:
+{“John”, “Mike”, “Chris”, “Jack”, “Andy”, “Gretchen”, “Helen”}
+Extract the list having names from “Mike” till “Andy”.
+
+METHOD 1:
+var result = names.Skip(1).Take(4).ToList();
+
+foreach(var name in result)
+                {                 
+                    Console.Write(name);
+                }
+*******************************************
+METHOD 2 :
+var names = strList
+.Select((name, index) => new  {name,index})
+.Where(i => i.index > 0 && i.index < 5);		
+
+foreach(var name in names)
+{
+    Console.WriteLine(name.name);
+}
+*******************************************

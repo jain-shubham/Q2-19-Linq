@@ -1,0 +1,4 @@
+Assuming there is a list of numbers, create a query to extract odd numbers from the list.
+
+Let the list name be numList;
+numList.Where(num => num % 2 != 0).ToList()

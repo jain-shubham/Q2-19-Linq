@@ -1,0 +1,24 @@
+Consider the following entities:
+
+Product - ProductId, ProductTitle, CategoryId
+Category - CategoryId, CategoryTitle
+a. Write a linq query to display the ProductId, ProductTitle and its Category Title.
+
+Product.Join(Category, p => p.CategoryId, c = c.CategoryId, (p, c) = new {
+ ProductId = p.ProductId,
+ ProductTitle = p.ProductTitle,
+ CategoryTitle = c.CategoryTitle
+})
+
+B. Write a linq query to display the ProductTitle and Category Title in the format:
+{ProductTitle: CategoryTitle} and if there is no product associated with a particular category it should show “No Product” instead of product title.
+
+var result = Product.Join(Category, p => p.CategoryId, c = c.CategoryId, (p, c) = new { 
+ ProductTitle = p.ProductTitle == string.Empty ? ”No Title” : p.ProductTitle,
+ CategoryTitle = c.CategoryTitle
+})
+
+foreach(var book in result)
+{ 
+Console.Writeln(book.ProductTitle.ToString()+”:”+book.CategoryTitle.ToString());
+}
